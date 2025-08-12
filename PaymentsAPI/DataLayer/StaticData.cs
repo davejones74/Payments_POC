@@ -16,20 +16,104 @@ namespace PaymentsAPI.DataLayer
         {
             CaseList = new List<Case>
             {
-                new Case { CaseId = "101", ServiceRequests = new List<ServiceRequest>
+                // Scenario 7: Retro remission with a calculated refund
+                new Case { CaseId = "Scenario7", ServiceRequests = new List<ServiceRequest>
                     {
-                       new ServiceRequest
-                       {
-                           Reference = "SR101",
-                           Fees = new List<Fees>
-                           {
-                               new Fees { Code = "F001", GrossAmount = 100 },
-                               new Fees { Code = "F002", GrossAmount = 50 }
-                           }
-                       }
+                        new ServiceRequest
+                        {
+                            Reference = "SR7",
+                            Fees = new List<Fees>
+                            {
+                                new Fees { Code = "F701", GrossAmount = 300 },
+                                new Fees { Code = "F702", GrossAmount = 50 }
+                            }
+                        }
+                    }
+                },
+
+                // Scenario 8A: 1 Service Requests  there would be no amount due or overpayment
+                new Case { CaseId = "Scenario8", ServiceRequests = new List<ServiceRequest>
+                    {
+                        new ServiceRequest
+                        {
+                            Reference = "SR8A",
+                            Fees = new List<Fees>
+                            {
+                                new Fees { Code = "F801", GrossAmount = 300 },
+                                new Fees { Code = "F802", GrossAmount = 50 }
+                            }
+                        }
+                    }
+                },
+
+                // Scenario 8B: 2 Service Requests there would be an amount due and overpayment
+                new Case { CaseId = "Scenario8", ServiceRequests = new List<ServiceRequest>
+                    {
+                        new ServiceRequest
+                        {
+                            Reference = "SR8B1",
+                            Fees = new List<Fees>
+                            {
+                                new Fees { Code = "F811", GrossAmount = 300 }
+                            }
+                        },
+                        new ServiceRequest
+                        {
+                            Reference = "SR8B2",
+                            Fees = new List<Fees>
+                            {
+                                new Fees { Code = "F812", GrossAmount = 50 }
+                            }
+                        }
+                    }
+                },
+
+                // Scenario 9: There would be an amount due and overpayment
+                new Case { CaseId = "Scenario9", ServiceRequests = new List<ServiceRequest>
+                    {
+                        new ServiceRequest
+                        {
+                            Reference = "SR9A",
+                            Fees = new List<Fees>
+                            {
+                                new Fees { Code = "F911", GrossAmount = 612 },
+                                new Fees { Code = "F912", GrossAmount = 45 }
+                            }
+                        },
+                        new ServiceRequest
+                        {
+                            Reference = "SR9B",
+                            Fees = new List<Fees>
+                            {
+                                new Fees { Code = "F922", GrossAmount = 300 }
+                            }
+                        },
+                        new ServiceRequest
+                        {
+                            Reference = "SR9C",
+                            Fees = new List<Fees>
+                            {
+                                new Fees { Code = "F931", GrossAmount = 50 }
+                            }
+                        }
+                    }
+                },
+
+                // Scenario 10: 3 Retro remissions - the system will not allow more than 1 remission and therefore each retro remission will need to be added and refunded before adding the next 
+                new Case { CaseId = "Scenario10", ServiceRequests = new List<ServiceRequest>
+                    {
+                        new ServiceRequest
+                        {
+                            Reference = "SR10",
+                            Fees = new List<Fees>
+                            {
+                                new Fees { Code = "F1000", GrossAmount = 612 },
+                                new Fees { Code = "F1000", GrossAmount = 50 },
+                                new Fees { Code = "F1000", GrossAmount = 300 }
+                            }
+                        }
                     }
                 }
-
             };
         }
 

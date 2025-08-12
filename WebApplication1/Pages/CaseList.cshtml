@@ -6,11 +6,13 @@
 
 <h2>Case List</h2>
 
+
+
 <table class="table table-striped table-bordered">
     <thead class="table-dark">
         <tr>
             <th>Case ID</th>
-            <th>Service Request</th>
+            <th>Service Request Hello</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +24,11 @@
                     @case1.CaseId
                     </a>
                 </td>
-                <td>@case1.ServiceRequests[0].Reference</td>
+                <td>
+                    @(case1.ServiceRequests != null && case1.ServiceRequests.Count > 0 
+                        ? case1.ServiceRequests[0].Reference 
+                        : "No Service Requests")
+                </td>
             </tr>
         }
     </tbody>
