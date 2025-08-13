@@ -16,8 +16,10 @@ namespace PaymentsAPI.DataLayer
         {
             CaseList = new List<Case>
             {
-                // Scenario 7: Retro remission with a calculated refund
-                new Case { CaseId = "Scenario7", ServiceRequests = new List<ServiceRequest>
+                new Case { 
+                    CaseId = "1754-5791-4808-7001", 
+                    Name = "Scenario 7: Retro remission with a calculated refund",
+                    ServiceRequests = new List<ServiceRequest>
                     {
                         new ServiceRequest
                         {
@@ -32,11 +34,14 @@ namespace PaymentsAPI.DataLayer
                 },
 
                 // Scenario 8A: 1 Service Requests  there would be no amount due or overpayment
-                new Case { CaseId = "Scenario8", ServiceRequests = new List<ServiceRequest>
+                new Case { 
+                    CaseId = "1754-5791-4808-7002", 
+                    Name = "Scenario 8-A: 1 Service Requests  there would be no amount due or overpayment",
+                    ServiceRequests = new List<ServiceRequest>
                     {
                         new ServiceRequest
                         {
-                            Reference = "SR8A",
+                            Reference = "SR8A1",
                             Fees = new List<Fees>
                             {
                                 new Fees { Code = "F801", GrossAmount = 300 },
@@ -47,7 +52,10 @@ namespace PaymentsAPI.DataLayer
                 },
 
                 // Scenario 8B: 2 Service Requests there would be an amount due and overpayment
-                new Case { CaseId = "Scenario8", ServiceRequests = new List<ServiceRequest>
+                new Case { 
+                    CaseId = "1754-5791-4808-7003", 
+                    Name = "Scenario 8-B: 2 Service Requests there would be an amount due and overpayment",
+                    ServiceRequests = new List<ServiceRequest>
                     {
                         new ServiceRequest
                         {
@@ -69,7 +77,10 @@ namespace PaymentsAPI.DataLayer
                 },
 
                 // Scenario 9: There would be an amount due and overpayment
-                new Case { CaseId = "Scenario9", ServiceRequests = new List<ServiceRequest>
+                new Case { 
+                    CaseId = "1754-5791-4808-7004", 
+                    Name = "Scenario 9: There would be an amount due and overpayment",
+                    ServiceRequests = new List<ServiceRequest>
                     {
                         new ServiceRequest
                         {
@@ -100,11 +111,14 @@ namespace PaymentsAPI.DataLayer
                 },
 
                 // Scenario 10: 3 Retro remissions - the system will not allow more than 1 remission and therefore each retro remission will need to be added and refunded before adding the next 
-                new Case { CaseId = "Scenario10", ServiceRequests = new List<ServiceRequest>
+                new Case { 
+                    CaseId = "1754-5791-4808-7005", 
+                    Name = "Scenario 10: 3 Retro remissions - the system will not allow more than 1 remission and therefore each retro remission will need to be added and refunded before adding the next",
+                    ServiceRequests = new List<ServiceRequest>
                     {
                         new ServiceRequest
                         {
-                            Reference = "SR10",
+                            Reference = "SR10A",
                             Fees = new List<Fees>
                             {
                                 new Fees { Code = "F1000", GrossAmount = 612 },

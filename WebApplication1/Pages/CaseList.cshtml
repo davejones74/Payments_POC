@@ -12,7 +12,8 @@
     <thead class="table-dark">
         <tr>
             <th>Case ID</th>
-            <th>Service Request Hello</th>
+            <th>Name</th>
+            <th>Service Requests</th>
         </tr>
     </thead>
     <tbody>
@@ -25,8 +26,11 @@
                     </a>
                 </td>
                 <td>
-                    @(case1.ServiceRequests != null && case1.ServiceRequests.Count > 0 
-                        ? case1.ServiceRequests[0].Reference 
+                    @case1.Name
+                </td>
+                <td>
+                    @(case1.ServiceRequests != null && case1.ServiceRequests.Count > 0
+                        ? string.Join(", ", case1.ServiceRequests.Select(sr => sr.Reference))
                         : "No Service Requests")
                 </td>
             </tr>

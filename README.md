@@ -8,6 +8,12 @@ This project is a .NET application for managing payment cases.
 
 - [.NET SDK](https://dotnet.microsoft.com/download) installed
 
+### Clean the Application
+
+```bash
+dotnet clean
+```
+
 ### Build the Application
 
 ```bash

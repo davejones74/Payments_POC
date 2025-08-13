@@ -52,6 +52,8 @@
         }
         public string CaseId { get; set; }
 
+        public string Name { get; set; }
+
         public List<ServiceRequest> ServiceRequests { get; set; }
 
         private int TotalPayments1()
